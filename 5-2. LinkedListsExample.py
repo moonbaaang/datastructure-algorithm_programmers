@@ -35,16 +35,6 @@ class LinkedList:
 
         return curr
 
-
-    def insertAfter(self, prev, newNode):
-        newNode.next = prev.next
-        if prev.next is None:
-            self.tail = newNode
-        prev.next = newNode
-        self.nodeCount += 1
-        return True
-
-
     def insertAt(self, pos, newNode):
         if pos < 1 or pos > self.nodeCount + 1:
             return False
@@ -55,6 +45,13 @@ class LinkedList:
             prev = self.getAt(pos - 1)
         return self.insertAfter(prev, newNode)
 
+    def insertAfter(self, prev, newNode):
+        newNode.next = prev.next
+        if prev.next is None:
+            self.tail = newNode
+        prev.next = newNode
+        self.nodeCount += 1
+        return True
 
     def popAfter(self, prev):
         curr = prev.next
