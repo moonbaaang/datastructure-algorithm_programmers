@@ -70,6 +70,15 @@ class Node:
             traversal += self.right.inorder()
         return traversal
 
+    def preorder(self):
+        traversal = []
+        traversal.append(self.data)
+        if self.left:
+            traversal += self.left.preorder()
+        if self.right:
+            traversal += self.right.preorder()
+        return traversal
+
 
 class BinaryTree:
     def __init__(self, r):
@@ -93,4 +102,8 @@ class BinaryTree:
         else:
             return []
 
-        
+    def preorder(self):
+        if self.root:
+            return self.root.preorder()
+        else:
+            return []
