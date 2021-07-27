@@ -75,7 +75,7 @@ class Node:
                 return None, None
         
         else:
-            return self, parent
+            return self, parent # key = self, parent > self의 parent
 
 
     def insert(self, key, data):

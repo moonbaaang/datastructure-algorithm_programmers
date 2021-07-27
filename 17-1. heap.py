@@ -28,7 +28,11 @@ class MaxHeap:
     def __init__(self):
         self.data = [None]
 
-
+    # 삭제
+    # 조건 1 : 삭제할 데이터가 올바른 범위내에 있는지 확인
+    # 조건 2 : root와 마지막leaf의 데이터 값을 교환
+    # 조건 3 : 마지막 leaf의 데이터 값을 pop
+    # 조건 4 : root에 위치한 데이터 값을 올바른 위치로 이동
     def remove(self):
         if len(self.data) > 1:
             self.data[1], self.data[-1] = self.data[-1], self.data[1]
